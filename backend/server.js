@@ -17,6 +17,11 @@ mongoose.connect(process.env.MONGO_URI)
 // --- API ROUTES ---
 
 // GET: Fetch all todos
+
+app.get('/',async(req,res)=>{
+  app.send('Homepage')
+})
+
 app.get('/todos', async (req, res) => {
   const todos = await Todo.find();
   res.json(todos);
